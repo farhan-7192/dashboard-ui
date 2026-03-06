@@ -1,0 +1,28 @@
+<svg
+  width="36"
+  height="36"
+  viewBox="0 0 36 36"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Green rounded background -->
+  <rect
+    width="36"
+    height="36"
+    rx="10"
+    fill="#16A34A"
+  />
+
+  <!-- White "up" text -->
+  <text
+    x="50%"
+    y="55%"
+    text-anchor="middle"
+    fill="white"
+    font-size="16"
+    font-weight="600"
+    font-family="Inter, Arial, sans-serif"
+    dominant-baseline="middle"
+  >
+    up
+  </text>
+</svg>

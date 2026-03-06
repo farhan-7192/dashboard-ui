@@ -1,0 +1,17 @@
+<svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- Bell body -->
+    <path d="M18 16V11C18 7.7 15.8 5 12 5C8.2 5 6 7.7 6 11V16L4 18H20L18 16Z" />
+    
+    <!-- Bell clapper -->
+    <path d="M10 19C10.5 20 11.2 20.5 12 20.5C12.8 20.5 13.5 20 14 19" />
+    
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg 
+  width="24" 
+  height="24" 
+  viewBox="0 0 24 24" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- Left person -->
+    <circle cx="9" cy="8" r="3" />
+    <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" />
+    
+    <!-- Right person -->
+    <circle cx="17" cy="10" r="2.5" />
+    <path d="M13.5 19c.3-2.3 2.3-4 4.5-4 2.5 0 4.5 2 4.5 4" />
+    
+  </g>
+</svg>
