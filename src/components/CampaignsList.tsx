@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 interface CampaignProps {
   title: string;
@@ -29,24 +28,94 @@ function CampaignCard({
   stats,
 }: CampaignProps) {
   return (
-    <Card className="rounded-xl p-5 shadow-sm border-slate-200">
-      <div className="flex justify-between items-start mb-6">
-        <div className="flex items-center gap-4">
+    <Card
+      className={`
+        rounded-xl
+        p-0
+        shadow-none
+        border
+        border-slate-200
+        overflow-hidden
+        bg-white
+      `}
+    >
+      <div
+        className={`
+          flex
+          justify-between
+          items-start
+          p-5
+        `}
+      >
+        <div
+          className={`
+            flex
+            items-start
+            gap-4
+          `}
+        >
           <div
-            className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${iconBg}`}
+            className={`
+              w-12
+              h-12
+              rounded-xl
+              flex
+              items-center
+              justify-center
+              shrink-0
+              ${iconBg}
+            `}
           >
-            <img src={icon} alt="Campaign Icon" className="w-5 h-5" />
+            <img src={icon} alt="Campaign Icon" className="w-6 h-6 invert" />
           </div>
-          <div>
-            <h3 className="font-semibold text-slate-900">{title}</h3>
-            <p className="text-sm text-slate-500 truncate w-75 md:w-112.5">
+          <div
+            className={`
+              flex
+              flex-col
+              gap-0.5
+              mt-0.5
+            `}
+          >
+            <h3
+              className={`
+                font-semibold
+                text-base
+                text-slate-900
+              `}
+            >
+              {title}
+            </h3>
+            <p
+              className={`
+                text-sm
+                text-slate-500
+                truncate
+                w-80
+                md:w-96
+              `}
+            >
               {subtitle}
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-4 text-slate-500 text-sm">
-          <div className="flex items-center gap-1.5">
+        <div
+          className={`
+            flex
+            items-center
+            gap-5
+            text-slate-500
+            text-sm
+            mt-1
+          `}
+        >
+          <div
+            className={`
+              flex
+              items-center
+              gap-1.5
+            `}
+          >
             <img
               src="/body/mail.svg"
               alt="Inbox"
@@ -54,7 +123,13 @@ function CampaignCard({
             />
             {inboxCount}
           </div>
-          <div className="flex items-center gap-1.5">
+          <div
+            className={`
+              flex
+              items-center
+              gap-1.5
+            `}
+          >
             <img
               src="/body/clock.svg"
               alt="Clock"
@@ -63,43 +138,87 @@ function CampaignCard({
             {clockCount}
           </div>
 
-          <Badge
-            variant="outline"
-            className="flex items-center gap-1.5 border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full text-xs font-medium shadow-none hover:bg-emerald-50"
+          <div
+            className={`
+              flex
+              items-center
+              gap-1.5
+              border
+              border-emerald-200
+              bg-white
+              text-emerald-600
+              px-2.5
+              py-0.5
+              rounded-full
+              text-xs
+              font-medium
+            `}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span
+              className={`
+                w-1.5
+                h-1.5
+                rounded-full
+                bg-emerald-500
+              `}
+            ></span>
             {status}
-          </Badge>
+          </div>
 
           <img
             src="/body/dots.svg"
             alt="Menu"
-            className="w-4 h-4 opacity-40 cursor-pointer"
+            className="w-4 h-4 opacity-40 cursor-pointer ml-1"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-4 divide-x divide-slate-200 border-t border-slate-100 pt-5">
-        <div className="flex flex-col items-center justify-center">
-          <span className="font-semibold text-slate-900">
-            {stats.delivered}
-          </span>
-          <span className="text-xs text-slate-500 mt-1">Delivered</span>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <span className="font-semibold text-slate-900">{stats.opened}</span>
-          <span className="text-xs text-slate-500 mt-1">Opened</span>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <span className="font-semibold text-slate-900">{stats.clicked}</span>
-          <span className="text-xs text-slate-500 mt-1">Clicked</span>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <span className="font-semibold text-slate-900">
-            {stats.converted}
-          </span>
-          <span className="text-xs text-slate-500 mt-1">Converted</span>
-        </div>
+      <div
+        className={`
+          grid
+          grid-cols-4
+          border-t
+          border-slate-100
+          py-4
+          px-5
+        `}
+      >
+        {[
+          { label: "Delivered", value: stats.delivered },
+          { label: "Opened", value: stats.opened },
+          { label: "Clicked", value: stats.clicked },
+          { label: "Converted", value: stats.converted },
+        ].map((stat, index) => (
+          <div
+            key={index}
+            className={`
+              flex
+              flex-col
+              items-center
+              justify-center
+              ${index !== 0 ? "border-l border-slate-100" : ""}
+            `}
+          >
+            <span
+              className={`
+                text-lg
+                font-semibold
+                text-slate-900
+              `}
+            >
+              {stat.value}
+            </span>
+            <span
+              className={`
+                text-xs
+                text-slate-500
+                mt-0.5
+              `}
+            >
+              {stat.label}
+            </span>
+          </div>
+        ))}
       </div>
     </Card>
   );
@@ -174,50 +293,103 @@ const campaignsData: CampaignProps[] = [
 
 export default function CampaignsList() {
   return (
-    <div className="flex flex-col gap-4 pb-10">
-      <div className="flex items-center justify-between mb-2">
-        <h2 className="font-bold text-slate-900">24 Campaigns</h2>
+    <div
+      className={`
+        flex
+        flex-col
+        gap-4
+        pb-10
+      `}
+    >
+      <div
+        className={`
+          flex
+          items-center
+          justify-between
+          mb-2
+        `}
+      >
+        <h2
+          className={`
+            font-semibold
+            text-base
+            text-slate-900
+          `}
+        >
+          24 Campaigns
+        </h2>
 
-        <div className="flex items-center gap-6">
+        <div
+          className={`
+            flex
+            items-center
+            gap-4
+          `}
+        >
           <Button
             variant="ghost"
-            className="flex items-center gap-1 px-3 py-1.5 text-sm text-slate-700 shadow-none font-normal h-auto"
+            className={`
+              flex
+              items-center
+              gap-1.5
+              px-3
+              py-1.5
+              text-xs
+              text-slate-500
+              shadow-none
+              font-normal
+              h-auto
+              hover:bg-transparent
+            `}
           >
-            Metric Definition
+            Matrics definitions
             <img
               src="/body/question.svg"
               alt="question"
-              className="w-4 h-4 opacity-60"
+              className="w-3.5 h-3.5 opacity-60"
             />
           </Button>
 
           <Button
             variant="outline"
-            className="flex items-center gap-2 border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-700 bg-white hover:bg-slate-50 transition-colors shadow-none font-normal h-auto"
+            className={`
+              flex
+              items-center
+              gap-2
+              border
+              border-slate-200
+              rounded-lg
+              px-3
+              py-1.5
+              text-xs
+              text-slate-700
+              bg-white
+              hover:bg-slate-50
+              transition-colors
+              shadow-none
+              font-medium
+              h-auto
+            `}
           >
             <img
               src="/body/calendar.svg"
               alt="Calendar"
-              className="w-4 h-4 opacity-60"
+              className="w-3.5 h-3.5 opacity-60"
             />
             19 June 2024 - 27 June 2024
           </Button>
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div
+        className={`
+          flex
+          flex-col
+          gap-4
+        `}
+      >
         {campaignsData.map((campaign, index) => (
-          <CampaignCard
-            key={index}
-            title={campaign.title}
-            subtitle={campaign.subtitle}
-            iconBg={campaign.iconBg}
-            icon={campaign.icon}
-            inboxCount={campaign.inboxCount}
-            clockCount={campaign.clockCount}
-            status={campaign.status}
-            stats={campaign.stats}
-          />
+          <CampaignCard key={index} {...campaign} />
         ))}
       </div>
     </div>
