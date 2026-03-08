@@ -28,94 +28,24 @@ function CampaignCard({
   stats,
 }: CampaignProps) {
   return (
-    <Card
-      className={`
-        rounded-xl
-        p-0
-        shadow-none
-        border
-        border-slate-200
-        overflow-hidden
-        bg-white
-      `}
-    >
-      <div
-        className={`
-          flex
-          justify-between
-          items-start
-          p-5
-        `}
-      >
-        <div
-          className={`
-            flex
-            items-start
-            gap-4
-          `}
-        >
+    <Card className="rounded-xl p-0 shadow-none border border-slate-200 overflow-hidden bg-white">
+      <div className="flex justify-between items-start p-5">
+        <div className="flex items-start gap-4">
           <div
-            className={`
-              w-12
-              h-12
-              rounded-xl
-              flex
-              items-center
-              justify-center
-              shrink-0
-              ${iconBg}
-            `}
+            className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${iconBg}`}
           >
             <img src={icon} alt="Campaign Icon" className="w-6 h-6 invert" />
           </div>
-          <div
-            className={`
-              flex
-              flex-col
-              gap-0.5
-              mt-0.5
-            `}
-          >
-            <h3
-              className={`
-                font-semibold
-                text-base
-                text-slate-900
-              `}
-            >
-              {title}
-            </h3>
-            <p
-              className={`
-                text-sm
-                text-slate-500
-                truncate
-                w-80
-                md:w-96
-              `}
-            >
+          <div className="flex flex-col gap-0.5 mt-0.5">
+            <h3 className="font-semibold text-base text-slate-900">{title}</h3>
+            <p className="text-sm text-slate-500 truncate w-80 md:w-96">
               {subtitle}
             </p>
           </div>
         </div>
 
-        <div
-          className={`
-            flex
-            items-center
-            gap-5
-            text-slate-500
-            text-sm
-            mt-1
-          `}
-        >
-          <div
-            className={`
-              flex
-              items-center
-              gap-1.5
-            `}
-          >
+        <div className="flex items-center gap-5 text-slate-500 text-sm mt-1">
+          <div className="flex items-center gap-1.5">
             <img
               src="/body/mail.svg"
               alt="Inbox"
@@ -123,13 +53,7 @@ function CampaignCard({
             />
             {inboxCount}
           </div>
-          <div
-            className={`
-              flex
-              items-center
-              gap-1.5
-            `}
-          >
+          <div className="flex items-center gap-1.5">
             <img
               src="/body/clock.svg"
               alt="Clock"
@@ -138,30 +62,8 @@ function CampaignCard({
             {clockCount}
           </div>
 
-          <div
-            className={`
-              flex
-              items-center
-              gap-1.5
-              border
-              border-emerald-200
-              bg-white
-              text-emerald-600
-              px-2.5
-              py-0.5
-              rounded-full
-              text-xs
-              font-medium
-            `}
-          >
-            <span
-              className={`
-                w-1.5
-                h-1.5
-                rounded-full
-                bg-emerald-500
-              `}
-            ></span>
+          <div className="flex items-center gap-1.5 border border-emerald-200 bg-white text-emerald-600 px-2.5 py-0.5 rounded-full text-xs font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
             {status}
           </div>
 
@@ -173,16 +75,7 @@ function CampaignCard({
         </div>
       </div>
 
-      <div
-        className={`
-          grid
-          grid-cols-4
-          border-t
-          border-slate-100
-          py-4
-          px-5
-        `}
-      >
+      <div className="grid grid-cols-4 border-t border-slate-100 py-4 px-5">
         {[
           { label: "Delivered", value: stats.delivered },
           { label: "Opened", value: stats.opened },
@@ -191,32 +84,12 @@ function CampaignCard({
         ].map((stat, index) => (
           <div
             key={index}
-            className={`
-              flex
-              flex-col
-              items-center
-              justify-center
-              ${index !== 0 ? "border-l border-slate-100" : ""}
-            `}
+            className={`flex flex-col items-center justify-center ${index !== 0 ? "border-l border-slate-100" : ""}`}
           >
-            <span
-              className={`
-                text-lg
-                font-semibold
-                text-slate-900
-              `}
-            >
+            <span className="text-lg font-semibold text-slate-900">
               {stat.value}
             </span>
-            <span
-              className={`
-                text-xs
-                text-slate-500
-                mt-0.5
-              `}
-            >
-              {stat.label}
-            </span>
+            <span className="text-xs text-slate-500 mt-0.5">{stat.label}</span>
           </div>
         ))}
       </div>
@@ -293,54 +166,14 @@ const campaignsData: CampaignProps[] = [
 
 export default function CampaignsList() {
   return (
-    <div
-      className={`
-        flex
-        flex-col
-        gap-4
-        pb-10
-      `}
-    >
-      <div
-        className={`
-          flex
-          items-center
-          justify-between
-          mb-2
-        `}
-      >
-        <h2
-          className={`
-            font-semibold
-            text-base
-            text-slate-900
-          `}
-        >
-          24 Campaigns
-        </h2>
+    <div className="flex flex-col gap-4 pb-10">
+      <div className="flex items-center justify-between mb-2">
+        <h2 className="font-semibold text-base text-slate-900">24 Campaigns</h2>
 
-        <div
-          className={`
-            flex
-            items-center
-            gap-4
-          `}
-        >
+        <div className="flex items-center gap-4">
           <Button
             variant="ghost"
-            className={`
-              flex
-              items-center
-              gap-1.5
-              px-3
-              py-1.5
-              text-xs
-              text-slate-500
-              shadow-none
-              font-normal
-              h-auto
-              hover:bg-transparent
-            `}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-slate-500 shadow-none font-normal h-auto hover:bg-transparent"
           >
             Matrics definitions
             <img
@@ -352,24 +185,7 @@ export default function CampaignsList() {
 
           <Button
             variant="outline"
-            className={`
-              flex
-              items-center
-              gap-2
-              border
-              border-slate-200
-              rounded-lg
-              px-3
-              py-1.5
-              text-xs
-              text-slate-700
-              bg-white
-              hover:bg-slate-50
-              transition-colors
-              shadow-none
-              font-medium
-              h-auto
-            `}
+            className="flex items-center gap-2 border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-700 bg-white hover:bg-slate-50 transition-colors shadow-none font-medium h-auto"
           >
             <img
               src="/body/calendar.svg"
@@ -381,13 +197,7 @@ export default function CampaignsList() {
         </div>
       </div>
 
-      <div
-        className={`
-          flex
-          flex-col
-          gap-4
-        `}
-      >
+      <div className="flex flex-col gap-4">
         {campaignsData.map((campaign, index) => (
           <CampaignCard key={index} {...campaign} />
         ))}
