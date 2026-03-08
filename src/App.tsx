@@ -8,16 +8,43 @@ import CampaignsList from "./components/CampaignsList";
 
 export default function App() {
   return (
-    <SidebarProvider className="bg-slate-50 overflow-hidden">
+    <SidebarProvider
+      className={`
+        bg-white
+        overflow-hidden
+        flex
+        h-screen
+        w-full
+      `}
+    >
       <Sidebar />
 
-      <main className="flex-1 h-screen overflow-y-auto px-8 py-6 bg-white rounded-tl-3xl border-t border-l border-slate-200 shadow-sm">
+      <div
+        className={`
+          flex-1
+          flex
+          flex-col
+          min-w-0
+          bg-white
+          border-l
+          border-slate-200
+        `}
+      >
         <TopHeader />
-        <AdBanner />
-        <Filter />
-        <Toggle />
-        <CampaignsList />
-      </main>
+        <main
+          className={`
+            flex-1
+            overflow-y-auto
+            px-8
+            py-6
+          `}
+        >
+          <AdBanner />
+          <Filter />
+          <Toggle />
+          <CampaignsList />
+        </main>
+      </div>
     </SidebarProvider>
   );
 }
