@@ -34,7 +34,7 @@ function CampaignCard({
           <div
             className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${iconBg}`}
           >
-            <img src={icon} alt="Campaign Icon" className="w-6 h-6 invert" />
+            <img src={icon} alt="Campaign Icon" className="w-6 h-6" />
           </div>
           <div className="flex flex-col gap-0.5 mt-0.5">
             <h3 className="font-semibold text-base text-slate-900">{title}</h3>
