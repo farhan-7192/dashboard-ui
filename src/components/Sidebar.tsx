@@ -53,14 +53,16 @@ const menuGroups: MenuItem[][] = [
 export default function Sidebar() {
   return (
     <ShadcnSidebar
-      className="bg-slate-50 border-r border-slate-200 h-screen flex flex-col w-64 shrink-0"
+      className="bg-slate-50 border-r border-slate-200 h-screen flex flex-col"
       collapsible="none"
     >
       <SidebarHeader className="h-20 flex flex-row items-center justify-between px-6 shrink-0">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-            up
-          </div>
+          <img
+            src="/SideBar/logo.svg"
+            alt="Level Up Logo"
+            className="w-8 h-8"
+          />
           <span className="font-semibold text-slate-900 text-lg">Level Up</span>
         </div>
         <img
@@ -82,8 +84,8 @@ export default function Sidebar() {
                         isActive={item.status === "active"}
                         className={
                           item.status === "active"
-                            ? "py-2 px-3 h-auto mb-1 rounded-lg bg-indigo-50 text-indigo-700 font-medium hover:bg-indigo-100 hover:text-indigo-800"
-                            : "py-2 px-3 h-auto mb-1 rounded-lg text-slate-600 hover:bg-slate-100"
+                            ? "py-1.5 px-3 h-auto bg-violet-100! text-violet-700! font-medium hover:bg-violet-200! hover:text-violet-800!"
+                            : "py-1.5 px-3 h-auto text-slate-600 hover:bg-slate-100"
                         }
                       >
                         <img
@@ -95,7 +97,7 @@ export default function Sidebar() {
                               : "w-5 h-5 opacity-50"
                           }
                         />
-                        <span className="text-sm ml-2">{item.label}</span>
+                        <span className="text-sm ml-1">{item.label}</span>
                         {item.rightIcon && (
                           <img
                             src={item.rightIcon}
@@ -111,7 +113,7 @@ export default function Sidebar() {
             </SidebarGroup>
 
             {groupIndex < menuGroups.length - 1 && (
-              <SidebarSeparator className="my-3 bg-slate-200 mx-0" />
+              <SidebarSeparator className="my-2 bg-slate-200 mx-0" />
             )}
           </React.Fragment>
         ))}
@@ -120,13 +122,13 @@ export default function Sidebar() {
       <SidebarFooter className="mt-auto p-4 shrink-0">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton className="py-2 px-3 h-auto text-slate-600 hover:bg-slate-100 rounded-lg">
+            <SidebarMenuButton className="py-1.5 px-3 h-auto text-slate-600 hover:bg-slate-100">
               <img
                 src="/SideBar/settings.svg"
                 alt="Settings"
                 className="w-5 h-5 opacity-50"
               />
-              <span className="text-sm ml-2">Settings</span>
+              <span className="text-sm ml-1">Settings</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
