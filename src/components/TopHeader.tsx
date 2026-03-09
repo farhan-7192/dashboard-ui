@@ -20,7 +20,7 @@ export default function TopHeader() {
       <Button
         variant="outline"
         size="icon"
-        className="rounded-full h-10 w-10 ml-4 border-slate-200 bg-white hover:bg-slate-50 shrink-0 shadow-none"
+        className="rounded-xl h-10 w-10 ml-4 border-slate-200 bg-white hover:bg-slate-50 shrink-0 shadow-none"
       >
         <img
           src="/Header/Bell.svg"
