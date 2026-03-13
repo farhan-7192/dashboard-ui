@@ -27,7 +27,7 @@ export default function CampaignsList() {
     fetch("http://localhost:5000/api/campaigns")
       .then((res) => res.json())
       .then((data) => {
-        const formattedData = data.map((item: any) => ({
+        const formattedData = data.map((item) => ({
           id: item.id,
           title: item.title,
           subtitle: item.subtitle,
